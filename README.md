@@ -1,5 +1,18 @@
 # Mun
 
+[![Visual Studio Marketplace][marketplace-badge]][marketplace]
+[![MIT/Apache][licence-badge]][license]
+[![Join us on Discord][discord-badge]][discord]
+
+[licence-badge]: https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue
+[license]: COPYRIGHT
+
+[discord-badge]: https://img.shields.io/discord/602227728480993281.svg?logo=discord
+[discord]: https://discord.gg/SfvvcCU
+
+[marketplace-badge]: https://img.shields.io/visual-studio-marketplace/v/mun-lang.mun
+[marketplace]: https://marketplace.visualstudio.com/items?itemName=mun-lang.mun
+
 Provides [Mun](https://mun-lang.org) language integration with Visual Studio
 Code.
 
