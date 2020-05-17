@@ -1,10 +1,10 @@
 {
   "name": "mun",
-  "displayName": "mun",
+  "displayName": "Mun",
   "version": "0.1.0",
   "description": "Mun language integration",
   "main": "./dist/main.js",
-  "publisher": "baszalmstra",
+  "publisher": "mun-lang",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mun-lang/mun.git"
@@ -38,7 +38,7 @@
     "onLanguage:mun"
   ],
   "engines": {
-    "vscode": "^1.45.0"
+    "vscode": "^1.37.0"
   },
   "contributes": {
     "languages": [

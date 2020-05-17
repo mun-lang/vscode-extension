@@ -3,7 +3,6 @@
 Provides [Mun](https://mun-lang.org) language integration with Visual Studio
 Code.
 
-
 ## License
 
 The Mun Runtime is licensed under either of
