@@ -1,0 +1,229 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Mun",
+    "scopeName": "source.mun",
+	"patterns": [
+		{
+			"include": "#block_doc_comment"
+		},
+		{
+			"include": "#block_comment"
+        },
+        {
+			"include": "#line_doc_comment"
+		},
+		{
+			"include": "#line_comment"
+        },
+        {
+			"comment": "Floating point literal (fraction)",
+			"name": "constant.numeric.float.mun",
+			"match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b"
+		},
+		{
+			"comment": "Floating point literal (exponent)",
+			"name": "constant.numeric.float.mun",
+			"match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?[eE][+-]?[0-9_]+(f32|f64)?\\b"
+		},
+		{
+			"comment": "Floating point literal (typed)",
+			"name": "constant.numeric.float.mun",
+			"match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9_]+)?(f32|f64)\\b"
+		},
+		{
+			"comment": "Integer literal (decimal)",
+			"name": "constant.numeric.integer.decimal.mun",
+			"match": "\\b[0-9][0-9_]*([ui](8|16|32|64|128|s|size))?\\b"
+		},
+		{
+			"comment": "Integer literal (hexadecimal)",
+			"name": "constant.numeric.integer.hexadecimal.mun",
+			"match": "\\b0x[a-fA-F0-9_]+([ui](8|16|32|64|128|s|size))?\\b"
+		},
+		{
+			"comment": "Integer literal (octal)",
+			"name": "constant.numeric.integer.octal.mun",
+			"match": "\\b0o[0-7_]+([ui](8|16|32|64|128|s|size))?\\b"
+		},
+		{
+			"comment": "Integer literal (binary)",
+			"name": "constant.numeric.integer.binary.mun",
+			"match": "\\b0b[01_]+([ui](8|16|32|64|128|s|size))?\\b"
+        },
+        {
+			"comment": "Boolean constant",
+			"name": "constant.language.boolean.mun",
+			"match": "\\b(true|false)\\b"
+        },
+        {
+			"comment": "Control keyword",
+			"name": "keyword.control.mun",
+			"match": "\\b(break|else|if|loop|return|while)\\b"
+        },
+        {
+			"comment": "Keyword",
+			"name": "keyword.other.mun",
+			"match": "\\b(extern|let)\\b"
+        },
+        {
+			"include": "#pub"
+		},
+        {
+			"comment": "Comparison operator",
+			"name": "keyword.operator.comparison.mun",
+			"match": "(&&|\\|\\||==|!=)"
+        },
+        {
+			"comment": "Assignment operator",
+			"name": "keyword.operator.assignment.mun",
+			"match": "(\\+=|-=|/=|\\*=|%=|\\^=|&=|\\|=|<<=|>>=|=)"
+        },
+        {
+			"comment": "Arithmetic operator",
+			"name": "keyword.operator.arithmetic.mun",
+			"match": "(!|\\+|-|/|\\*|%|\\^|&|\\||<<|>>)"
+        },
+        {
+			"comment": "Comparison operator (second group because of regex precedence)",
+			"name": "keyword.operator.comparison.mun",
+			"match": "(<=|>=|<|>)"
+        },
+        {
+			"include": "#core_types"
+        },
+        {
+			"comment": "Type declaration",
+			"begin": "\\b(struct)\\s*(\\([a-z]*\\))?\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"end": "[\\{\\(;]",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.mun"
+                },
+                "2": {
+					"patterns": [
+                        {
+                            "include": "#struct_storage"
+                        }
+                    ]
+				},
+				"3": {
+					"name": "entity.name.type.mun"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#block_comment"
+				},
+				{
+					"include": "#line_comment"
+				},
+				{
+					"include": "#core_types"
+				},
+				{
+					"include": "#pub"
+				}
+			]
+		},
+        {
+			"comment": "Function call",
+			"match": "\\b([A-Za-z][A-Za-z0-9_]*|_[A-Za-z0-9_]+)\\s*\\(",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.mun"
+				}
+			}
+        },
+        {
+			"comment": "Function definition",
+			"begin": "\\b(fn)\\s+([A-Za-z][A-Za-z0-9_]*|_[A-Za-z0-9_]+)",
+			"end": "[\\{;]",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.fn.mun"
+				},
+				"2": {
+					"name": "entity.name.function.mun"
+				}
+            },
+            "patterns": [
+                {
+					"include": "#block_comment"
+				},
+				{
+					"include": "#line_comment"
+                },
+                {
+					"include": "#core_types"
+                },
+                {
+					"comment": "Function arguments",
+					"match": "\bfn\b",
+					"name": "keyword.other.fn.mun"
+                }
+            ]
+        }
+    ],
+    "repository": {
+        "block_doc_comment": {
+            "comment": "Block documentation comment",
+            "name": "comment.block.documentation.mun",
+            "begin": "/\\*[\\*!](?![\\*/])",
+            "end": "\\*/",
+            "patterns": [
+                {
+                    "include": "#block_doc_comment"
+                },
+                {
+                    "include": "#block_comment"
+                }
+            ]
+        },
+        "block_comment": {
+            "comment": "Block comment",
+            "name": "comment.block.mun",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [
+                {
+                    "include": "#block_doc_comment"
+                },
+                {
+                    "include": "#block_comment"
+                }
+            ]
+        },
+        "line_doc_comment": {
+			"comment": "Single-line documentation comment",
+			"name": "comment.line.documentation.mun",
+			"begin": "//[!/](?=[^/])",
+			"end": "$"
+        },
+        "line_comment": {
+            "comment": "Single-line comment",
+            "name": "comment.line.double-slash.mun",
+            "begin": "//",
+            "end": "$"
+        },
+        "core_types": {
+			"comment": "Built-in/core type",
+			"name": "storage.type.primitive.mun",
+			"match": "\\b(bool|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64)\\b"
+        },
+        "pub": {
+			"comment": "Visibility modifier",
+			"name": "storage.modifier.visibility.mun",
+			"match": "\\bpub\\b"
+		},
+        "type": {
+			"comment": "A type",
+			"name": "entity.name.type.mun",
+			"match": "\\b([A-Za-z][_A-Za-z0-9]*|_[_A-Za-z0-9]+)\\b"
+        },
+        "struct_storage": {
+            "comment": "Struct storage specifier",
+			"name": "storage.modifier.struct.mun",
+			"match": "\\b(gc|value)\\b"
+        }
+    }
+}

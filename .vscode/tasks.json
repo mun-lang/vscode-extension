@@ -1,0 +1,28 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build VSCode Extension in Background",
+        "group": "build",
+        "type": "npm",
+        "script": "watch",
+        "problemMatcher": {
+          "base": "$tsc-watch",
+          "fileLocation": ["${workspaceFolder}"]
+        },
+        "isBackground": true,
+      },
+      {
+        "label": "Build VSCode Extension",
+        "group": "build",
+        "type": "npm",
+        "script": "build",
+        "problemMatcher": {
+          "base": "$tsc",
+          "fileLocation": ["${workspaceFolder}"]
+        },
+      }
+    ]
+}

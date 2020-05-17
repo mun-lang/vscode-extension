@@ -1,0 +1,65 @@
+{
+  "name": "mun",
+  "displayName": "mun",
+  "version": "0.1.0",
+  "description": "Mun language integration",
+  "main": "./dist/main.js",
+  "publisher": "baszalmstra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mun-lang/mun.git"
+  },
+  "author": "The Mun Team <team@mun-lang.org>",
+  "license": "MIT OR Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mun-lang/mun/issues"
+  },
+  "homepage": "https://github.com/mun-lang/mun#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
+    "typescript": "^3.9.2",
+    "typescript-formatter": "^7.2.2",
+    "vsce": "^1.75.0",
+    "vscode": "^1.1.37",
+    "rollup": "^2.10.2"
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc && rollup -c",
+    "package": "vsce package",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "tsfmt --verify && eslint -c .eslintrc.js --ext ts ./src",
+    "fmt": " tsfmt -r       && eslint -c .eslintrc.js --ext ts ./src --fix"
+  },
+  "activationEvents": [
+    "onLanguage:mun"
+  ],
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "mun",
+        "aliases": [
+          "Mun",
+          "mun"
+        ],
+        "extensions": [
+          ".mun"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mun",
+        "scopeName": "source.mun",
+        "path": "./syntaxes/mun.tmGrammar.json"
+      }
+    ]
+  }
+}
