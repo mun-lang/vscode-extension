@@ -2,6 +2,7 @@
   "name": "mun",
   "displayName": "Mun",
   "version": "0.1.0",
+  "preview": true,
   "description": "Mun language integration",
   "main": "./dist/main.js",
   "publisher": "mun-lang",
@@ -14,6 +15,10 @@
   "bugs": {
     "url": "https://github.com/mun-lang/mun/issues"
   },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": ["mun"],
   "homepage": "https://github.com/mun-lang/mun#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
