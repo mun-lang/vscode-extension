@@ -1,5 +1,6 @@
 **
 !dist/main.js
-!package.json
 !package-lock.json
+!package.json
 !README.md
+!syntaxes/mun.tmGrammar.json
