@@ -1,3 +1,5 @@
+Note: Mun VS Code Extension is free to use for all, including commercial users, until v1.0.0 is released. After v1.0.0, commercial users must contact team@mun-lang.org to purchase a Commercial-use license.
+
 # PolyForm Noncommercial License 1.0.0
 
 <https://polyformproject.org/licenses/noncommercial/1.0.0>
