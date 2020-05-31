@@ -11,7 +11,7 @@
     "url": "git+https://github.com/mun-lang/mun.git"
   },
   "author": "The Mun Team <team@mun-lang.org>",
-  "license": "MIT OR Apache-2.0",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "bugs": {
     "url": "https://github.com/mun-lang/mun/issues"
   },
