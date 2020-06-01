@@ -18,11 +18,17 @@ Code.
 
 ## License
 
-The Mun Runtime is licensed under either of
+### VS Code Extension: Polyform Noncommercial
 
- * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
-   http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or
-   http://opensource.org/licenses/MIT)
- 
+The Mun Visual Studio Code Extension is licensed under:
+
+PolyForm Noncommercial License, Version 1.0.0, ([LICENSE.md](LICENSE.md) or https://polyformproject.org/licenses/noncommercial/1.0.0/
+
+### Mun runtime: Apache / MIT
+
+The Mun runtime is licensed under either of
+
+ * Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0)
+ * MIT license, http://opensource.org/licenses/MIT)
+
  at your option.
