@@ -42,7 +42,8 @@
     "fmt": " tsfmt -r       && eslint -c .eslintrc.js --ext ts ./src --fix"
   },
   "activationEvents": [
-    "onLanguage:mun"
+    "onLanguage:mun",
+    "workspaceContains:**/mun.toml"
   ],
   "engines": {
     "vscode": "^1.45.1"
