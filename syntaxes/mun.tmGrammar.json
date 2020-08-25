@@ -125,6 +125,30 @@
 				}
 			]
 		},
+		{
+			"comment": "Type alias",
+			"begin": "\\b(type)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"end": ";",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.mun"
+				},
+				"2": {
+					"name": "entity.name.type.mun"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#block_comment"
+				},
+				{
+					"include": "#line_comment"
+				},
+				{
+					"include": "#core_types"
+				}
+			]
+		},
         {
 			"comment": "Function call",
 			"match": "\\b([A-Za-z][A-Za-z0-9_]*|_[A-Za-z0-9_]+)\\s*\\(",
