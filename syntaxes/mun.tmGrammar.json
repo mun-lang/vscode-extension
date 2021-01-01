@@ -63,7 +63,7 @@
         {
 			"comment": "Keyword",
 			"name": "keyword.other.mun",
-			"match": "\\b(extern|let|self|super|package)\\b"
+			"match": "\\b(extern|let|use|self|super|package)\\b"
         },
         {
 			"include": "#pub"
