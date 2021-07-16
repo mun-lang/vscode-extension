@@ -15,7 +15,8 @@
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "newLine": "LF"
+        "newLine": "LF",
+        "importHelpers": true
     },
     "exclude": [
         "node_modules"
