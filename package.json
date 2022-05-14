@@ -29,17 +29,18 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^7.1.0",
-    "rollup": "^2.51.1",
+    "esbuild": "^0.14.27",
     "tslib": "^2.3.0",
-    "typescript": "^4.3.5",
+    "typescript": "^4.6.3",
     "typescript-formatter": "^7.2.2",
-    "vsce": "^1.95.1"
+    "vsce": "^2.7.0"
   },
   "scripts": {
-    "vscode:prepublish": "tsc && rollup -c",
+    "vscode:prepublish": "npm run build-base -- --minify",
+    "build-base": "esbuild ./src/main.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --target=node16",
     "package": "vsce package",
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "build": "npm run build-base -- --sourcemap",
+    "watch": "npm run build-base -- --sourcemap --watch",
     "lint": "tsfmt --verify && eslint -c .eslintrc.js --ext ts ./src",
     "fmt": " tsfmt -r       && eslint -c .eslintrc.js --ext ts ./src --fix"
   },
