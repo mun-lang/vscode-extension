@@ -3,5 +3,7 @@
 !package-lock.json
 !package.json
 !README.md
-!syntaxes/mun.tmGrammar.json
 !LICENSE.md
+!syntaxes/mun.tmGrammar.json
+!language-configuration.json
+!icon.png
