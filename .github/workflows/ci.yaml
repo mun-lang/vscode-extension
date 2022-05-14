@@ -2,6 +2,10 @@ name: CI
 
 on: [pull_request, push]
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   typescript:
     name: TypeScript
@@ -19,12 +23,9 @@ jobs:
     - name: Install Nodejs
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 16.x
 
     - run: npm ci
-
-    - run: npm audit || { sleep 10 && npm audit; } || { sleep 30 && npm audit; }
-      if: runner.os == 'Linux'
 
     - run: npm run lint
 
